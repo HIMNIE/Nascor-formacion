@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    
+    <style>
+         table,tr,th,td {
+          padding: 20px;
+            border: 1px solid black;
+            width: 100%;
+            max-width: 600px;
+          
+            
+        }
+        input {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+   
+
+    </style>
+</head>
+<body>
+    <h1 style="margin-left: 250px;"> Formulario </h1>
+    <form action="recibir.html" method="GET">
+        <table  >
+            <tr>
+                <th><label for="nombre">Nombre:</label></th>
+                <th ><input type="text" id="nombre" name="nombre"    required ></th>
+            </tr>
+            <tr>
+                <th><label for="email">E-mail:</label></th>
+                <th><input type="email" id="email" name="email" required></th>
+            </tr>
+            <tr>
+                <th><label for="fecha_nacimiento">Fecha de Nacimiento:</label></th>
+                <th><input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required></th>
+            </tr>
+            <tr>
+                <th><label for="cursos">Cursos:</label></th>
+                 
+    
+                    <td>
+                   
+                    <input type="checkbox" id="python" name="cursos" value="Python">
+                    <label for="python">Python</label><br> <br>
+                    <input type="checkbox" id="php" name="cursos" value="PHP"> 
+                    <label for="php">  PHP</label><br> <br>
+
+                    <input type="checkbox" id="javascript" name="cursos" value="JavaScript">
+                    <label for="javascript">JavaScript</label><br><br>
+                    <input type="checkbox" id="c++" name="cursos" value="C++">
+                    <label for="c++">C++</label>
+           
+                </td>
+       
+            </tr>
+            <tr>
+                <th><label for="nivel_estudios">Nivel de Estudios:</label></th>
+                <th>
+                    <select id="nivel_estudios" name="nivel_estudios" required>
+                        <option value="basico">Básico</option>
+                        <option value="medio">Medio</option>
+                        <option value="superior">Superior</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th><label for="nivel_ingles">Nivel de Inglés:</label></th>
+                <th>
+                    <label for="vol"> 0 al 10:</label>
+           <input type="range" id="vol" name="vol" min="0" max="10">
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2" style="text-align:center;">
+                    <button type="submit">Enviar</button>
+                </th>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
