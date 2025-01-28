@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+
+</head>
+
+<body>
+
+    <h1>Formulario de Información</h1>
+    <form name="formulario" action="receptor.html" method="GET">
+        <!-- name="formulario" da un nombre al formulario
+            action="#" define la URL de destino al enviar
+            method="POST" envía los datos de forma oculta
+            method="GET" envía los datos en la URL visible en la barra de direcciones.-->
+        <fieldset>
+            <legend>Información Personal:</legend>
+
+            <!-- <fieldset> agrupa controles relacionados en un formulario con un borde 
+            <legend> añade un título al grupo para mejor organización y claridad -->
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br><br>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            <br><br>
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+            <!-- <label> define el texto para un campo
+            "required" hace obligatorio completar el campo -->
+            <br><br>
+
+            <label>Género:</label>
+            <input type="radio" id="masculino" name="genero" value="Masculino" required>
+            <label for="masculino">Masculino</label>
+
+            <input type="radio" id="femenino" name="genero" value="Femenino">
+            <label for="femenino">Femenino</label>
+
+            <input type="radio" id="otro" name="genero" value="Otro">
+            <label for="otro">Otro</label>
+            <br><br>
+        </fieldset>
+
+        <br><br>
+        <fieldset>
+            <legend>Información de Contacto:</legend>
+
+            <label for="email">Dirección de Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <br><br>
+
+            <label for="direccion">Dirección:</label>
+            <textarea id="direccion" name="direccion" rows="4" cols="50"></textarea>
+            <!--rows="4" define la altura en 4 líneas visibles, y cols="50" el ancho en 50 caracteres aproximados. -->
+            <br><br>
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+        <!-- type="submit" indica que el botón enviará el formulario al servidor al hacer clic, activando el evento de envío. -->
+    </form>
+    <iframe width="1000" height="1000" src="https://play.famobi.com/cut-the-rope" frameborder="0"></iframe>
+</body>
+
+</html>

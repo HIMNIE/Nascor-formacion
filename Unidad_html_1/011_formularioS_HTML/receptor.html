@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>RECIBIDO</h1>
+    <h1>Datos Recibidos</h1>
+    <div id="datos">
+      <!-- Aquí se mostrarán los datos obtenidos de la URL -->
+    </div>
+    <script>
+        function obtenerDatosURL() {
+  const queryString = window.location.search; // Obtiene la parte de la URL después del '?'
+  const parametros = new URLSearchParams(queryString); // Crea un objeto para manejar los parámetros
+  const datos = {};
+ 
+  // Recorremos los parámetros y los añadimos al objeto
+  parametros.forEach((valor, clave) => {
+    datos[clave] = valor;
+  });
+ 
+  return datos; // Retorna el objeto con los datos
+}
+ 
+// Ejemplo de uso
+const datosFormulario = obtenerDatosURL();
+console.log(datosFormulario);
+ 
+// Si quieres mostrarlos en la página
+document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.getElementById("datos");
+  if (contenedor) {
+    contenedor.innerHTML = `<pre>${JSON.stringify(datosFormulario, null, 2)}</pre>`;
+  }
+});
+ 
+    </script>
+</body>
+</html>

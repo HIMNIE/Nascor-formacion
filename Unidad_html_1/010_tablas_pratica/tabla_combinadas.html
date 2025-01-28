@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+table{
+    width: 100%;
+}
+        table tr td {
+            text-align: center;
+            padding: 10px;
+            font-size: larger;
+            border: 1px solid black;
+        }
+        .encabezados{ background-color: rgb(221, 230, 225);
+            text-align: center;
+        }
+        td {
+            
+        font-family: 'Courier New', Courier, monospace;}
+    </style>
+</head>
+<body>
+    
+
+    <table>
+<tr>
+    <td class="encabezados"> Nombre</td>   <td  class="encabezados" colspan="2"> Contactos</td>   <td rowspan="2" class="encabezados">Direccion</td>
+</tr>
+<tr>
+    <td class="encabezados" > Email</td>   <td class="encabezados">Telefono </td> <td>......</td>
+</tr>
+<tr>
+    <td> Juan perez </td> <td> juan@example.com </td> <td> +34 600 123 456 </td> <td rowspan="2"> Calle Falsa 123, Madrid</td>
+</tr>
+<tr>
+    <td> Ana garcia </td> <td> ana@example.com </td> <td> +34 600 654 321 </td>
+   
+</tr>
+<tr>
+    <td> Pedro lopez </td> <td colspan="2"> pedro@example.com </td> <td> Avenida Siempre Viva 456, Barcelona</td>
+  
+</tr>
+
+    </table>
+</body>
+</html>

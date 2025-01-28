@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Semántico HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        main {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            padding: 1rem;
+        }
+
+        article {
+            flex: 3;
+            padding: 1rem;
+        }
+
+        aside {
+            flex: 1;
+            padding: 1rem;
+            background-color: #f4f4f4;
+
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        footer > span {
+            font-size: small;
+        }
+        nav > button{
+            color:#4CAF50
+        }
+     /*   span{
+            font-size: small;
+        }
+        #copyright{
+            font-size: small;
+        }*/
+        .articleMain{
+            color:green
+        }
+        @media (max-width: 768px) {
+            nav a {
+                float: none;
+                width: 100%;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            article,
+            aside {
+                flex: 1;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mi Sitio Web</h1>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Acerca de</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+     
+    </nav>
+
+    <main>
+        <article >
+            <h2 class="articleMain">Artículo Principal</h2>
+            <p>No cuentes los días, haz que los días cuenten.
+                El único límite es tu mente.
+                Vayas donde vayas, ve con todo tu corazón.
+                Algo maravilloso está a punto de sucederme.
+                Cuando crees en ti, todo es posible.
+                ¡Échale ganas!
+                Ese sueño... ¡alcánzalo!
+                La sonrisa es lo que mejor te queda.
+                Si lo crees, lo creas.
+                La vida es una colección de momentos.
+                Nunca es tarde para empezar de nuevo.
+                 La vida es un regalo. Disfrútala al máximo.
+                Aprende de cada error. Crece con cada experiencia.
+                La felicidad está en las pequeñas cosas.
+                Vive el presente. Es lo único seguro.
+                El cambio empieza en ti.
+                Lo mejor de la vida es lo que está por venir.
+                El mundo necesita tu autenticidad.
+                Agradece lo que tienes. Lucha por lo que deseas.</p>
+        </article>
+
+        <aside>
+            <h3>Información Adicional</h3>
+            <p>Planta en ti lo que quieres que florezca en los demás.
+                Lo que piensas, lo serás. Lo que sientas, lo atraerás, lo que imagines, lo crearás.
+                Actitud y esfuerzo son dos cosas que dependen solo de ti.
+                Olvida el pasado, pero recuerda la lección.
+                Amar sin poseer, acompañar sin invadir, vivir sin depender.
+                El sentido de la vida es tener valores, no cosas de valor.
+                Nunca estarás solo si tú mismo no te abandonas.
+                La vida es similar a un rompecabezas, cada pieza tiene una razón, un lugar y un porqué. No insistas en colocar piezas donde no caben.
+                Busca lo que encienda tu alma.
+                Mantén siempre actualizada tu mejor versión.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mi Sitio Web</p>
+        <span>Todos los derechos reservados</span>
+    </footer>
+</body>
+
+</html>
