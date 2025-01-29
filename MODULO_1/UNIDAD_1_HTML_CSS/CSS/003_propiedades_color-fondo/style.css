@@ -1,0 +1,47 @@
+.cta-container{
+    background-image: url('https://cdn.pixabay.com/photo/2018/07/29/15/11/first-3570299_1280.jpg');
+    text-align: center;
+    background-size: cover;
+    height: 100vh;
+    padding: 25vh;
+    
+ 
+    
+}
+.cta-text{
+   
+}
+.cta-button{
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+  background-color: blue;
+    color: azure;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+.cta-button:hover{
+    background-color: rgb(24, 73, 206);
+}
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+p{
+    
+    color: rgb(13, 13, 14);
+    font-size: 3vh;
+
+}
+h2{
+    
+    color: rgb(17, 17, 17);
+    font-size: 5vh;
+  
+}
+h1{
+    color: aquamarine;
+    box-shadow: 2rem 6rem 6rem 6rem rgb(214, 126, 126, 0.6);
+}
