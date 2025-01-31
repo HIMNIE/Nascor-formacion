@@ -1,0 +1,8 @@
+.galeria{
+    width: 100%;
+}
+img{
+    width:30%;
+    min-width: 280px;
+    margin: 1%;
+}
