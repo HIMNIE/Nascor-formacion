@@ -1,0 +1,25 @@
+button{
+
+    color: rgb(252, 253, 246);
+    background-color: burlywood;
+    border-radius: 5px;
+    padding: 10px 25px;
+    border: none;
+    box-shadow: 1px 2px 4px 5px black;
+    font-size: medium;
+
+}
+button::first-letter{
+    color: rgb(41, 13, 143);
+
+}
+button:hover{
+    color: rgb(207, 99, 10);
+}
+button:hover::before{
+    content:" Haz click ";
+}
+button:focus::after{
+    content:  " ya has visitado este recurso";
+    color: rgb(107, 72, 51);
+}
