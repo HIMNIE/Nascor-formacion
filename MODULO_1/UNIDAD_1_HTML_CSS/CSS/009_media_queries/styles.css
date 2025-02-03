@@ -1,0 +1,162 @@
+/* Reset básico para eliminar márgenes y rellenos predeterminados */
+
+
+body, h1, p, button {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif; /* Fuente estándar para mayor compatibilidad */
+}
+
+/* Configuración del cuerpo de la página */
+body {
+    display: flex; /* Usa flexbox para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    background-color: #f0f4f8; /* Color de fondo claro */
+}
+
+/* Contenedor principal de la tarjeta de perfil */
+.profile-card {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra elementos en la tarjeta */
+    background-color: #fff; /* Fondo blanco para la tarjeta */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 2rem; /* Espaciado interno */
+    text-align: center; /* Alineación central del texto */
+    transition: all 0.3s ease; /* Transición suave para efectos */
+}
+
+/* Estilo de la imagen de perfil */
+.profile-image img {
+    border-radius: 50%; /* Hace la imagen circular */
+    margin-bottom: 1rem; /* Espaciado debajo de la imagen */
+    transition: all 0.3s ease; /* Transición suave en efectos */
+    width: 110px; /* Tamaño fijo para la imagen */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* Contenedor de la información del perfil */
+.profile-info {
+    display: flex;
+    flex-direction: column; /* Alinea el contenido en columna */
+    align-items: center; /* Centra los elementos */
+}
+
+/* Estilo del nombre del perfil */
+.profile-name {
+    color: #333; /* Color de texto oscuro para mejor legibilidad */
+    font-size: 1.5rem; /* Tamaño del texto */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Estilo de la descripción del perfil */
+.profile-description {
+    color: #646464; /* Color de texto gris oscuro */
+    font-size: 1rem; /* Tamaño del texto */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Botón de perfil */
+.profile-button {
+    background-color: hsl(220, 90%, 56%); /* Azul vibrante */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 0.5rem 1.5rem; /* Espaciado interno */
+    cursor: pointer; /* Cursor tipo puntero */
+    transition: all 0.3s ease; /* Transición suave */
+    outline: none; /* Elimina el contorno por defecto */
+}
+
+/* Efecto al pasar el mouse y al enfocar el botón */
+.profile-button:hover,
+.profile-button:focus {
+    background-color: hsl(220, 90%, 46%); /* Azul más oscuro */
+    outline: 2px solid rgba(255, 255, 255, 0.5); /* Contorno visible */
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Estilos para móviles pequeños */
+@media (max-width: 480px) {
+    .profile-card {
+        background-color: #d48c8c; /* Fondo rojo claro */
+    }
+    .profile-name {
+        font-size: 1.2rem; /* Reduce tamaño del nombre */
+    }
+    .profile-description {
+        font-size: 0.8rem; /* Reduce tamaño de la descripción */
+    }
+    .profile-button {
+        background-color: #d1ce0f; /* Amarillo */
+    }
+}
+
+/* Estilos para móviles medianos */
+@media (min-width: 481px) and (max-width: 767px) {
+    .profile-card {
+        background-color: #6fb35e; /* Verde */
+        flex-direction: row; /* Cambia a layout en fila */
+        text-align: left; /* Alinea texto a la izquierda */
+    }
+    .profile-image {
+        margin-right: 1rem; /* Espacio a la derecha de la imagen */
+    }
+    .profile-info {
+        align-items: flex-start; /* Alinea a la izquierda */
+    }
+    .profile-button {
+        background-color: #ce7f51; /* Marrón */
+    }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .profile-card {
+        background-color: #5ab6b1; /* Azul verdoso */
+    }
+    .profile-name {
+        font-size: 2rem; /* Aumenta tamaño del nombre */
+    }
+    .profile-description {
+        font-size: 1.2rem; /* Aumenta tamaño de la descripción */
+    }
+    .profile-button {
+        background-color: #a58585; /* Rosa apagado */
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1920px) {
+    .profile-card {
+        background-color: #60b5c0; /* Azul */
+        flex-direction: row; /* Alineación en fila */
+        justify-content: space-around; /* Espaciado uniforme */
+        text-align: left; /* Alinea texto a la izquierda */
+    }
+    .profile-image {
+        margin-right: 2rem; /* Espaciado de imagen */
+    }
+    .profile-info {
+        align-items: flex-start; /* Alinea contenido a la izquierda */
+    }
+    .profile-button {
+        background-color: #51ff00; /* Verde neón */
+    }
+}
+
+/* Ajustes para pantallas Retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .profile-card {
+        box-shadow: 0 8px 16px rgba(161, 110, 110, 0.3); /* Sombra más pronunciada */
+    }
+    .profile-button {
+        border: 2px solid #f7f4f4; /* Borde blanco sutil */
+    }
+}
