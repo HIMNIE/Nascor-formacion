@@ -1,0 +1,160 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tillana:wght@400;500;600;700;800&display=swap');
+
+
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    
+    font-family: "Tillana", serif;
+    background: #a54505;
+    color: rgb(248, 243, 243);
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 90px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+   
+}
+
+nav ul li a.activo {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: "Tillana", serif;;
+    background: #d48d08;
+    border-radius: 5px;
+}
+
+/* Página de inicio */
+.inicio {
+   
+    background-image: url(https://cdn.pixabay.com/photo/2023/11/14/16/14/pinecone-8388074_1280.jpg);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 25vh 10vw; 
+    height: 100vh;
+}
+
+
+.inicio h2 {
+    color: rgb(194, 54, 11);
+    font-size: 5rem;
+    text-shadow: 2px 2px 5px rgb(255, 253, 253);
+  
+}
+   
+
+/* Página de contacto */
+h2{
+    font-family: "Tillana", serif;
+
+ 
+}
+.contacto {
+
+    font-size: larger;
+    flex-grow: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+form {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 450px; 
+}
+
+.formulario {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+label {
+    min-width: 120px; 
+}
+
+input, textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #ad5f32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  
+}
+
+button:hover {
+    background: #0aa739;
+}
+
+/* Pie de página */
+footer {
+    font-family: "Tillana", serif;;
+    background:  #a54505;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; 
+}
+
+/* Responsive: Reducir el tamaño del texto en móviles */
+@media (max-width: 768px) {
+    .inicio h2 {
+        font-size: 2rem;
+       
+    }
+    .inicio{
+        height: 20vh;
+       
+    }
+    .mob {
+        flex-direction: column;
+    }
+}

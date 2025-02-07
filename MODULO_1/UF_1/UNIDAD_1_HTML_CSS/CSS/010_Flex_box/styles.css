@@ -1,0 +1,65 @@
+/* Reset básico */
+body, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+}
+
+/* Contenedor flex */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 1200px;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los círculos */
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+/* Colores individuales para los círculos */
+#circle1 {
+    background-color: #ff6b6b; /* Rojo */
+}
+
+#circle2 {
+    background-color: #4ecdc4; /* Turquesa */
+}
+
+#circle3 {
+    background-color: #ffe66d; /* Amarillo */
+}
+
+#circle4 {
+    background-color: #1a535c; /* Azul oscuro */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .circle {
+
+        /*display:none*/
+    }
+}

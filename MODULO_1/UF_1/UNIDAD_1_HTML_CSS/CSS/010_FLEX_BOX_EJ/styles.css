@@ -1,0 +1,63 @@
+/* Reset básico */
+body, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f6f7f8;
+}
+.galeria{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* flex */
+.galeria img {
+    margin: 1rem;
+   transition: transform 0.3s ease;
+    width: 30%;
+    max-width: 500px;
+    padding: 1px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+
+}
+
+
+
+
+
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+    .galeria {
+        width: 40%;
+      
+    }
+    @media (max-width: 768px) {
+        .galeria {
+           flex-direction: column;
+        }
+    .circle {
+
+        /*display:none*/
+    }
+}

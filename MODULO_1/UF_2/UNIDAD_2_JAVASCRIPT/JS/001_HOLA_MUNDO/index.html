@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo !! JS</title>
+  <style>
+    button{
+        border: solid 2px black;
+        padding: 10px 30px;
+        border-radius: 5px;
+        background-color: brown;
+        cursor: pointer;
+        margin: 200px;
+    }
+    button:hover{
+        background-color: rgb(7, 177, 58);
+    }
+
+  </style>
+</head>
+<body>
+    <button onclick="alert('hola mundo!!');"> click aqui</button>
+    <script>
+        let boton = document.querySelector('button');
+    
+        boton.addEventListener('mouseleave', function() {
+            alert('Adios Mundo');
+        });
+    </script>
+</body>
+
+
+</html>
