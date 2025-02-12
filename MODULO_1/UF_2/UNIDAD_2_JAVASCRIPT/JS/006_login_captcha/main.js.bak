@@ -1,0 +1,16 @@
+
+
+
+let LoginCaptcha = parseInt(prompt('Ingrese el resultado de 5 + 9'));
+
+let resultadoCaptcha = 14;
+
+if (LoginCaptcha === resultadoCaptcha) {
+    document.write('El resultado es correcto.¡ Bienvenido ! Resultado : '+LoginCaptcha);
+} else {
+    alert(`Respuesta incorrecta. Inténtalo de nuevo. <br> Tu numero insertado es : ${LoginCaptcha} NO ES CORRECTO`);
+    window.location.reload();
+}
+
+
+

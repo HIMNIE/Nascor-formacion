@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios con Bucles</title>
+</head>
+<body>
+    <script>
+        //--- Imprimir números del 0 al 4 en una sola línea separados por comas ---
+        let coma = ","; // Variable para agregar la coma entre números
+        for (let i = 0; i <= 4; i++) {
+            if (i === 4) coma = ""; // Cuando llegue al último número, no agrega coma
+            document.write(i + coma); // Escribe el número seguido de la coma
+        }
+
+        document.write("<br>"); // Salto de línea para separar el siguiente resultado
+
+        //--- Imprimir números del 0 al 4 en columnas (uno debajo del otro) ---
+        for (let i = 0; i <= 4; i++) {
+            document.write(i + "<br>"); // Cada número se imprime en una nueva línea
+        }
+
+        document.write("<hr>"); // Línea horizontal para separar secciones
+
+        //--- Validación del usuario con una operación matemática ---
+        let numUsuario = parseInt(prompt("Comprobar que eres humano: Ingresa 5 + 9"));
+
+        if (isNaN(numUsuario)) { // Verifica si la entrada no es un número
+            alert("Debes introducir un número"); // Muestra alerta
+            window.location.reload(); // Recarga la página para pedir el número de nuevo
+        } else {
+            let coma = ","; // Variable para manejar la coma en la salida
+
+            // Imprime números del 0 hasta el número ingresado, pero deteniéndose en 2
+            for (let i = 0; i <= numUsuario; i++) {
+                if (i === numUsuario || i === 2) coma = ""; // Evita la coma en el último número o en el 2
+                document.write(i + coma); // Imprime el número
+                if (i === 2) break; // Detiene el bucle cuando `i` llega a 2
+            }
+        }
+
+        document.write("<hr>"); // Línea horizontal para separar secciones
+
+        //--- Suma de los números del 1 al 100 ---
+        let suma = 0; // Variable para almacenar la suma
+        for (let i = 0; i <= 100; i++) {
+            suma += i; // Acumulamos la suma de todos los números
+        }
+        document.write("La suma de los números del 1 al 100 es: " + suma); // Mostramos el resultado
+
+        document.write("<hr>"); // Línea horizontal para separar secciones
+
+        //--- Imprimir los números pares del 1 al 20 ---
+        document.write("Números pares del 1 al 20:<br>");
+        for (let i = 1; i <= 20; i++) {
+            if (i % 2 === 0) document.write(i + "<br>"); // Verifica si el número es par e imprime
+        }
+
+        document.write("<hr>"); // Línea horizontal para separar secciones
+
+        //--- Imprimir triángulo invertido con asteriscos (Método eficiente) ---
+        for (let i = 4; i > 0; i--) { // Controla el número de líneas
+            for (let j = i; j > 0; j--) { // Imprime `i` asteriscos en cada línea
+                document.write("*");
+            }
+            document.write("<br>"); // Salto de línea para la siguiente fila
+        }
+
+        document.write("<hr>"); // Línea horizontal para separar secciones
+
+        //--- Imprimir triángulo invertido con asteriscos (Método manual, menos eficiente) ---
+        for (let j = 4; j > 0; j--) { document.write("*"); } // Línea con 4 asteriscos
+        document.write("<br>");
+
+        for (let j = 3; j > 0; j--) { document.write("*"); } // Línea con 3 asteriscos
+        document.write("<br>");
+
+        for (let j = 2; j > 0; j--) { document.write("*"); } // Línea con 2 asteriscos
+        document.write("<br>");
+
+        for (let j = 1; j > 0; j--) { document.write("*"); } // Línea con 1 asterisco
+        document.write("<br>");
+
+    </script>
+</body>
+</html>

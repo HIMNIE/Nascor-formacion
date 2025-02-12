@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<style>
+ 
+    .login{text-align:center;}
+    .login input {padding:10px;}
+    .login div{font-size:1.2em;}
+    button{padding:10px;background-color:aqua;margin-top:10px;}
+ 
+</style>
+<body>
+    <div class="login">
+ 
+            <div>Nombre de usuario</div>
+            <input id="usuario">
+            <div>Contraseña</div>
+            <input  id="password" />
+ 
+            <div>
+                <p><span id="num1"></span>+<span id="num2"></span></p>
+                <input id="resultado">
+            </div>
+            <button id="boton">Inicia sesión</button>
+            <div id="logueado"></div>
+ 
+    </div>
+    <script>
+        let randomNumber1;
+        let randomNumber2;
+        let resultadoCaptcha;
+        const usuarioCorrecto = "usuario1";
+        const passwordCorrecta = "usuario1";
+        function creaAleatorios(){
+            randomNumber1 = Math.floor(Math.random() * 20) + 1;
+            randomNumber2 = Math.floor(Math.random() * 20) + 1;
+            resultadoCaptcha = randomNumber1 + randomNumber2;
+        }
+ 
+        function colocaAleatorios(){
+            document.getElementById("num1").innerHTML = randomNumber1;
+            document.getElementById("num2").innerHTML = randomNumber2;
+        }
+        creaAleatorios();
+        colocaAleatorios();
+ 
+        document.getElementById("boton").addEventListener("click",()=>{
+            let resultado = parseInt(document.getElementById("resultado").value);
+           
+            if(resultado==resultadoCaptcha){
+                let usuario = document.getElementById("usuario").value;
+                let password = document.getElementById("password").value;
+ 
+                if(usuario==usuarioCorrecto && password==passwordCorrecta){
+                    document.getElementById("logueado").innerHTML = "Logueado"
+                    console.log("tu usuario es " + usuario + " tu clave es " + password)
+                }
+                else{
+                    document.getElementById("logueado").innerHTML = "Password incorrecto"
+                    creaAleatorios();
+                    colocaAleatorios();
+                }
+               
+            }else{
+                document.getElementById("logueado").innerHTML = "No has resuelto la suma"
+                creaAleatorios();
+                colocaAleatorios();
+            }
+ 
+        })
+    </script>
+</body>
+</html>
+ 

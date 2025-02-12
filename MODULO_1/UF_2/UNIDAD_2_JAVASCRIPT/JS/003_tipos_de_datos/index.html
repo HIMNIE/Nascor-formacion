@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tipos-datos</title>
+</head>
+<body>
+
+    <script>
+        // Definir array de frutas
+        let frutas = [
+            'manzana', // Índice 0
+            'naranja', // Índice 1
+            'plátano'  // Índice 2
+        ];
+
+        // Definir array de objetos (alumnos)
+        let alumnos = [
+            { nombre: 'Andrea', edad: 30 },
+            { nombre: 'Pedro', edad: 28 }
+        ];
+
+        // Obtener y mostrar información en la consola
+        console.log("Nombre del alumno: " + alumnos[1].nombre);
+
+        console.log(" <br>Edad del alumno: " + alumnos[0].edad);
+        console.log('frutas:1.-' +frutas[0]+'2.-'+frutas[1]+'3.-'+frutas[2]);
+
+      
+        // Generar contenido HTML dinámico
+        let str = `
+        <h2>Información del Alumno</h2>
+        <ol>
+            <li> Nombre del alumno/a: ${alumnos[0].nombre} </li>
+            <li> Edad: ${alumnos[0].edad} años </li>
+        </ol>
+        `;
+
+        document.write(str);
+    </script>
+
+</body>
+</html>

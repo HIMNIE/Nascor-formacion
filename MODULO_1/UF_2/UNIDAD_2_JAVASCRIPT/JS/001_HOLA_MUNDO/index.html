@@ -20,13 +20,18 @@
   </style>
 </head>
 <body>
-    <button onclick="alert('hola mundo!!');"> click aqui</button>
+    <!-- <button onclick="alert('hola mundo!!');"> click aqui</button> -->
+    <button > click aqui </button>
     <script>
         let boton = document.querySelector('button');
     
         boton.addEventListener('mouseleave', function() {
             alert('Adios Mundo');
         });
+        boton.addEventListener('click', function(){
+            alert('hola mundo!!')
+        }
+        )
     </script>
 </body>
 

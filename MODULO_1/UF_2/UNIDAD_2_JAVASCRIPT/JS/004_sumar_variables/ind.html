@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumar Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e3f2fd;
+            padding: 20px;
+        }
+        .contenedor {
+            display: inline-block;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .numero, .resultado {
+            display: block;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            text-align: center;
+            width: 200px;
+            border: 2px solid #007BFF;
+            background: linear-gradient(135deg, #89CFF0, #007BFF);
+            color: white;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .resultado {
+            border: 2px solid #28a745;
+            background: linear-gradient(135deg, #4CAF50, #28a745);
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        let num1 = parseFloat(prompt("Introduce el primer número:"));
+        let num2 = parseFloat(prompt("Introduce el segundo número:"));
+
+        if (isNaN(num1) || isNaN(num2)) {
+            document.write("<p style='color: red; font-size: 18px;'>Por favor, introduce números válidos.</p>");
+        } else {
+            let suma = num1 + num2;
+
+            document.write("<div class='contenedor'>");
+            document.write("<div class='numero'> el Primer Número introducido: " + num1 + "</div>");
+            document.write("<div class='numero'> el Segundo Número introducido: " + num2 + "</div>");
+            document.write("<div class='resultado'>Resultado: " + suma + "</div>");
+            document.write("</div>");
+        }
+    </script>
+
+</body>
+</html>
