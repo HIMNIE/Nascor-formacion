@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+function verificarCaptcha(intento) {
+    let resultadoCaptcha = 14;
+    let LoginCaptcha = parseInt(prompt('Ingrese el resultado de 5 + 9'));
+
+    if (LoginCaptcha === resultadoCaptcha) {
+        document.write('El resultado es correcto. ¡Bienvenido! Resultado: ' + LoginCaptcha);
+        return;
+    } else if (isNaN(LoginCaptcha)) {
+        alert('Debes introducir un número');
+    } else {
+        alert(`Respuesta incorrecta.\nTu número insertado es: ${LoginCaptcha} NO ES CORRECTO \nInténtalo de nuevo.`);
+        intento--;
+    }
+
+    if (intento === 0) {
+        alert('Has alcanzado el límite de intentos, eres un hacker');
+        window.location.href = "https://mossos.gencat.cat/ca/inici";
+        return;
+    }
+
+    verificarCaptcha(intento);
+}
+
+// Llamar a la función con el número inicial de intentos
+verificarCaptcha(3);
+
+
+
+    </script>
+</body>
+</html>
