@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Alumno</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2C3E50;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 1.4em;
+            margin-top: 20px;
+        }
+
+        .media {
+            font-weight: bold;
+            color: #2980B9;
+        }
+
+        .calificacion {
+            font-weight: bold;
+            font-size: 1.6em;
+            color: #27AE60;
+        }
+
+        .calificacion.suspenso {
+            color: #E74C3C;
+        }
+
+        .calificacion.suficiente {
+            color: #F39C12;
+        }
+
+        .calificacion.bien {
+            color: #F1C40F;
+        }
+
+        .calificacion.notable {
+            color: #3498DB;
+        }
+
+        .calificacion.sobresaliente {
+            color: #2ECC71;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Nombre del alumno: <span id="nombre"></span></h2>
+        <ul id="notas-lista"></ul>
+        <p><strong class="media">Media:</strong> <span id="media"></span></p>
+        <p><strong class="calificacion" id="calificacion"></strong></p>
+    </div>
+
+    <script>
+        // Función para calcular la media de un array de números
+        function calcularMedia(notas) {
+            let suma = 0;
+            for (let nota of notas) {
+                suma += nota;
+            }
+            let media = suma / notas.length;
+            return media.toFixed(2);
+        }
+
+        // Función para determinar la calificación final según la media
+        function obtenerCalificacion(media) {
+            if (media < 5) return "Suspenso";
+            if (media < 6) return "Suficiente";
+            if (media < 7) return "Bien";
+            if (media < 8) return "Notable";
+            return "Sobresaliente";
+        }
+
+        // Obtener el nombre del alumno
+        let nombre = prompt("Inserta el nombre del alumno:");
+        let notas = [];
+
+        // Pedir 5 notas y asegurarse de que sean números válidos
+        for (let i = 1; i <= 5; i++) {
+            let nota;
+            do {
+                let entrada = prompt(`Inserta la nota ${i}:`);
+                nota = parseFloat(entrada);
+                if (isNaN(nota) || nota < 0 || nota > 10) {
+                    alert("Debes ingresar un número válido entre 0 y 10.");
+                }
+            } while (isNaN(nota) || nota < 0 || nota > 10);
+
+            nota = parseFloat(nota.toFixed(2));
+
+            notas.push(nota);
+        }
+
+        // Calcular la media
+        let media = calcularMedia(notas);
+        let calificacion = obtenerCalificacion(media);
+
+        // Mostrar resultados en la página
+        document.getElementById('nombre').textContent = nombre;
+        const listaNotas = document.getElementById('notas-lista');
+        notas.forEach((nota, index) => {
+            const li = document.createElement('li');
+            li.textContent = `Nota ${index + 1}: ${nota}`;
+            listaNotas.appendChild(li);
+        });
+
+        document.getElementById('media').textContent = media;
+        const calificacionElement = document.getElementById('calificacion');
+        calificacionElement.textContent = calificacion;
+        calificacionElement.classList.add(calificacion.toLowerCase());
+    </script>
+</body>
+</html>
