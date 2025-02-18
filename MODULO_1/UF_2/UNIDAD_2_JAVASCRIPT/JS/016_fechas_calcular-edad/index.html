@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fechas JS_CALCULAR edad</title>
+    <style>
+        body{
+          height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(131, 62, 62);
+        }
+
+        div{
+
+            padding: 50px 50px;
+           background-color: rgb(5, 151, 151);
+          
+           box-shadow: 5px 5px 5px 5px rgb(33, 41, 26);
+           border-radius: 5px;
+        }
+        h2,p{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>calcula tu edad</h2>
+        <p id="edad"></p>
+    </div>
+   
+
+    <script>
+        let fechaNacimiento=prompt("introduce tu fecha con el seguiente formato YYYY-MM-DD")
+
+        let objfechaNaciemiento = new Date(fechaNacimiento);
+        let fechaActual=new Date();
+        let nacFullYear=objfechaNaciemiento.getFullYear();
+        let nacMes=objfechaNaciemiento.getMonth();
+        let nacDia=objfechaNaciemiento.getDate();
+
+        let actFullYear=fechaActual.getFullYear();
+        let actMes=fechaActual.getMonth();
+        let actDia=fechaActual.getDate();
+
+        let edad=actFullYear-nacFullYear;
+        if(actMes < nacMes || (actMes===nacMes && actDia<nacDia)) {
+            edad--;
+        }
+        document.querySelector('#edad').innerHTML= 'hola, tu edad es : ' +edad 
+
+
+
+
+
+
+        // Función para validar la fecha en formato YYYY-MM-DD
+        function esFechaValida(fecha) {
+ 
+ const regex = /^\d{4}-\d{2}-\d{2}$/;
+ if (!regex.test(fecha)) {
+     return false;
+ }
+ const date = new Date(fecha);
+ const timestamp = date.getTime();
+ if (typeof timestamp !== 'number' || Number.isNaN(timestamp)) {
+     return false;
+ }
+ const [year, month, day] = fecha.split('-');
+ if (date.getUTCFullYear() !== parseInt(year) ||
+     date.getUTCMonth() + 1 !== parseInt(month) ||
+     date.getUTCDate() !== parseInt(day)) {
+     return false;
+ }
+
+ return true;
+}
+
+
+
+
+
+
+
+
+         </script>
+    
+</body>
+</html>
