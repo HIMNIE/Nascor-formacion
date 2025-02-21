@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color</title>
+    <style>
+    body {
+    background-color: rgb(176, 219, 191);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+#eldiv {
+    padding: 50px;
+    background-color: rgb(5, 151, 151);
+    box-shadow: 5px 5px 10px rgba(33, 41, 26, 0.5);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+}
+#cambiacolor {
+    margin: 10px;
+    box-shadow: 5px 5px 10px rgba(33, 41, 26, 0.5);
+    position: relative;
+    padding: 90px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+#cambiacolor:hover {
+    background-color: #0056b3;
+}
+    
+   
+    </style>
+</head>
+
+<body>
+
+    <div id="eldiv"></div>
+    <button id="cambiacolor">Cambiar color</button>
+    <script>
+        // Función que devuelve un color hexadecimal aleatorio
+        function getRandomColor() {
+            return "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+        // Obtenemos el objeto del elemento eldiv
+        let eldiv = document.getElementById('eldiv');
+        // Obtenemos el objeto del elemento boton
+        let boton = document.getElementById('cambiacolor');
+       // Añadimos addEventListener para detectar la pulsación
+       // o click del botón
+        boton.addEventListener('click', function () {
+            // Obtenemos un color aleatorio de getRandomColor()
+            let colordefondo = getRandomColor();
+
+            // Aplicamos el color obtennido como Background del div
+            eldiv.style.backgroundColor = colordefondo;
+            // También escribimos el código headecimal como string en el div
+            eldiv.innerHTML = colordefondo;
+        })
+        
+
+    </script>
+
+</body>
+
+</html>

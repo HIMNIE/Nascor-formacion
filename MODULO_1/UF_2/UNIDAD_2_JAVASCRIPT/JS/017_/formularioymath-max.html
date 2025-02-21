@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Números</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3c1c1;
+            margin: 0;
+        }
+        #eldiv {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            font-size: 18px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            margin-top: 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+        #mensaje {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+   <div id="eldiv">
+        <h1>Ingresa dos números para ver cuál es mayor</h1>
+        <form id="formulario">
+            <label for="numero1">Introduce el primer número</label>
+            <input name="numero1" id="numero1" type="number" required><br>
+            <label for="numero2">Introduce el segundo número</label>
+            <input name="numero2" id="numero2" type="number" required><br>
+            <input type="submit" value="Comprobar" id="botonsubmit">
+        </form>
+        <div id="mensaje"></div>
+    </div>
+    
+
+    <script>
+       
+        // Obtenemos el formulario
+        let formulario = document.getElementById('formulario');
+       
+        // ponemos el listener para captar el envío del formulario
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let numero1 = document.getElementById('numero1').value;
+            let numero2 = document.getElementById('numero2').value;
+            let numeroMayor = Math.max(numero1, numero2);
+            let texto = `
+                <h1> Has ingresado los números 
+                    ${numero1} y ${numero2} y el 
+                    mayor es el ${numeroMayor}.
+            `;
+            let eldiv = document.querySelector('#mensaje');
+            eldiv.innerHTML=texto;
+
+        })
+        
+    </script>
+
+</body>
+
+</html>

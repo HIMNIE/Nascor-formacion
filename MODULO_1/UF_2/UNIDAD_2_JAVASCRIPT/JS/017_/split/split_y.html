@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de palabras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 50px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 5px auto;
+            padding: 10px;
+            width: 50%;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<h1>Introduce una frase</h1> 
+<form id="form">
+<input type="text" id="frase">
+<input type="submit">
+
+</form>
+<h2>lista de palabras de la frase</h2>
+<ul id="lista">
+
+
+</ul>
+
+
+<script>
+let form=document.querySelector('#form');
+let lista=document.querySelector('#lista');
+form.addEventListener('submit',function(e){
+    e.preventDefault();
+    let  frase=document.querySelector('#frase').value;
+    let arrayFrase =frase.split(' ');
+    arrayFrase.forEach(palabra => {
+        let elLista=document.createElement('li');
+        elLista.textContent=palabra;
+        lista.appendChild(elLista)
+        
+    });
+})
+
+
+
+</script>
+</body>
+</html>
