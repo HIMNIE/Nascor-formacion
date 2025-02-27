@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorteo de Nombres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to top, #ff9a9e, #fad0c4);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-group {
+            display: flex;
+           
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        input {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #ff6f61;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ff3b2f;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            padding: 5px;
+            margin: 3px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+      
+        #ganador {
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Sorteo de Nombres</h2>
+    
+    <div class="form-group">
+        <div><input type="text" id="nombre" placeholder="Ingresa un nombre"> <br> <button id="sortear">Sortear</button> </div>
+        <div> <button id="agregar">Agregar</button></div>
+        
+        
+    </div>
+
+    
+
+    <ul id="listaNombres"></ul>
+    <h3 id="ganador"></h3>
+
+    <script>
+        let nombres = [];
+let agregarme= document.getElementById("agregar")
+        agregarme.addEventListener("click", function() {
+            let nombre = document.getElementById("nombre").value;
+            if (nombre) {
+                nombres.push(nombre);
+                document.getElementById("listaNombres").innerHTML += "<li>" + nombre + "</li>";
+                document.getElementById("nombre").value = "";
+            }
+        });
+
+        document.getElementById("sortear").addEventListener("click", function() {
+            if (nombres.length > 0) {
+                let ganador = nombres[Math.floor(Math.random() * nombres.length)];
+                document.getElementById("ganador").textContent = "Ganador: " + ganador;
+            }
+        });
+
+        document.onkeyup = function(e){
+    if (e.key === "Enter") agregarme.click();
+}
+ 
+    
+
+ 
+    </script>
+
+</body>
+</html>

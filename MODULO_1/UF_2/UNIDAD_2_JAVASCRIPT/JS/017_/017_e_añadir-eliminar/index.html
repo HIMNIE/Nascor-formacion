@@ -1,0 +1,95 @@
+<!DOCTYPE html> <!-- Declara el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Inicia el documento HTML con el atributo de idioma en español -->
+<head>
+    <meta charset="UTF-8"> <!-- Configura la codificación de caracteres para soportar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea responsive en dispositivos móviles -->
+    <title>Lista de Tareas</title> <!-- Título de la página que aparece en la pestaña del navegador -->
+    <style>
+        /* Estilos generales para el cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif; /* Define la fuente de texto */
+            display: flex; /* Usa flexbox para centrar contenido */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+            background-color: #f4f4f4; /* Color de fondo */
+        }
+        .contenido {
+            background: white; /* Fondo del contenedor */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra para efecto visual */
+            width: 300px; /* Ancho fijo del contenedor */
+            text-align: center; /* Centra el contenido de texto */
+        }
+        input {
+            width: calc(100% - 22px); /* Ancho ajustado con margen */
+            padding: 8px; /* Espaciado interno */
+            margin-bottom: 10px; /* Margen inferior */
+            border: 1px solid #ccc; /* Borde con color gris */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+        button {
+            background: #28a745; /* Color de fondo verde */
+            color: white; /* Color del texto blanco */
+            border: none; /* Sin borde */
+            padding: 8px 12px; /* Espaciado interno */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+        button:hover {
+            background: #218838; /* Color más oscuro cuando se pasa el cursor */
+        }
+        ul {
+            list-style: none; /* Elimina los estilos de viñetas en la lista */
+            padding: 0; /* Elimina el padding por defecto */
+        }
+        li {
+            background: #eee; /* Fondo gris claro */
+            margin: 5px 0; /* Espaciado entre elementos de la lista */
+            padding: 8px; /* Espaciado interno */
+            display: flex; /* Usa flexbox para alinear contenido */
+            justify-content: space-between; /* Distribuye espacio entre elementos internos */
+            align-items: center; /* Alinea verticalmente el contenido */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+        .delete {
+            color: red; /* Color rojo para el botón de eliminar */
+            cursor: pointer; /* Cambia el cursor al pasar por encima */
+        }
+    </style>
+</head>
+<body>
+    <div class="contenido"> <!-- Contenedor principal de la aplicación -->
+        <h2>Lista de Tareas</h2> <!-- Título de la aplicación -->
+        <input type="text" id="taskInput" placeholder="Nueva tarea..."> <!-- Campo de entrada de texto para tareas -->
+        <button onclick="addTask()">Agregar</button> <!-- Botón para agregar tarea, llama a la función addTask() -->
+        <ul id="taskList"></ul> <!-- Lista donde se mostrarán las tareas -->
+    </div>
+
+    <script>
+        function addTask() {
+            let input = document.getElementById("taskInput"); // Obtiene el campo de entrada
+            let taskText = input.value.trim(); // Obtiene el valor y elimina espacios en blanco al inicio y fin
+            if (taskText === "") return; // Si el campo está vacío, no hace nada
+            
+            let li = document.createElement("li"); // Crea un nuevo elemento de lista (tarea)
+            li.innerHTML = taskText + ' <span class="delete" onclick="removeTask(this)">&times;</span>';
+
+            document.getElementById("taskList").appendChild(li); // Agrega la tarea a la lista
+            
+            input.value = ""; // Limpia el campo de entrada después de agregar la tarea
+        }
+        
+        function removeTask(element) {
+            element.parentElement.remove(); // Elimina la tarea correspondiente al hacer clic en la 'x'
+        }
+
+        document.onkeyup = function(e) { // Evento que escucha cuando se presiona una tecla
+            if (e.key === "Enter") { // Si la tecla presionada es 'Enter'
+                addTask(); // Llama a la función para agregar tarea
+            }
+        };
+    </script>
+</body>
+</html>
