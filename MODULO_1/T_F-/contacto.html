@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Semántico HTML</title>
+ <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Mi Sitio Web</h1>
+    </header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <main>
+        <form id="form">
+            <label for="nombreUsuario">nombre : </label>
+            <input type="text" name="nombreUsuario" id="nombreUsuario" required >
+            <label for="fechaNacimiento"> fecha Nacimiento :</label>
+            <input type="date" name="fechaNacimiento" id="fechaNacimiento" required >
+           
+            <select name="estudios" id="estudios">
+                <option value="Html"> Html</option>
+                <option value="Css"> Css</option>
+                <option value="Js"> Js</option>
+    
+            </select>
+            <button type="submit"> Enviar </button>
+    
+        </form>
+    
+        <div>
+    <form style="display: none;" id="form2">
+        
+        <label  for="fechaInicio">fecha Inicio : </label>
+        <input type="date" name="fechaInicio" id="fechaInicio" required >
+        <label for="fechaFin">fecha final : </label>
+        <input type="date" name="fechaFin" id="fechaFin" required >
+
+
+        <label for="empleo"> Empleo :</label>
+        <input type="text" name="empleo" id="empleo" required >
+       
+     
+        <button type="submit"> Enviar </button>
+    </form>
+        </div>
+    
+    
+    </main>
+    <footer>
+       
+       <h4><span id="copyright">&copy;</span> 2024 - Pie de página</h4>
+    </footer>
+    <script>
+    
+   
+    let nombreUsuario = document.querySelector('#nombreUsuario')
+        let fechaNac = document.querySelector('#fechaNacimiento')
+        let estudios = document.querySelector('#estudios')
+        let form = document.querySelector('#form')
+
+
+        form.onsubmit=function(e){
+            e.preventDefault()
+            
+
+
+
+     
+
+
+             nombreUsuario= nombreUsuario.value
+             fechaNac= fechaNac.value
+             estudios= estudios.value
+
+
+             document.querySelector('#form2').style.display="block"
+          
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

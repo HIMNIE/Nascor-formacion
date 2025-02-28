@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Contacto</title>
+    <style>
+      body {
+      
+        display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+        font-family: Arial, sans-serif;
+   
+        background: linear-gradient(to right, tan 0%, rgb(235, 178, 178) 100%);
+      }
+      #sidebar {
+        
+
+        display:flex;
+    justify-content: center;
+    align-items: center;
+        width: 50%;
+        padding: 30px;
+        border-right: 2px solid #141313;
+      }
+      #main {
+
+       
+        flex-grow: 1;
+        padding: 20px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <div id="sidebar">
+      <h3>Datos del Usuario</h3>
+      <p id="userInfo" class="hidden"></p>
+    </div>
+
+    <div id="main">
+      <form id="contactForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required />
+        <br />
+        <label for="birthdate">Fecha de Nacimiento:</label>
+        <input type="date" id="birthdate" required />
+        <br />
+        <button type="submit">Enviar</button>
+      </form>
+
+      <div id="experienceForm" class="hidden">
+        <h3>Experiencia Laboral</h3>
+        <form id="jobForm">
+          <label for="startDate">Fecha Inicio:</label>
+          <input type="date" id="startDate" required />
+          <br />
+          <label for="endDate">Fecha Final:</label>
+          <input type="date" id="endDate" required />
+          <br />
+          <label for="position">Puesto:</label>
+          <input type="text" id="position" required />
+          <br />
+          <button type="submit">Añadir</button>
+        </form>
+        <ul id="jobList"></ul>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let name = document.getElementById("name").value;
+          let birthdate = new Date(document.getElementById("birthdate").value);
+          let today = new Date();
+          let age = today.getFullYear() - birthdate.getFullYear();
+          let monthDiff = today.getMonth() - birthdate.getMonth();
+
+          // Ajustar si aún no ha cumplido años este año
+          if (
+            monthDiff < 0 ||
+            (monthDiff === 0 && today.getDate() < birthdate.getDate())
+          ) {
+            age--;
+          }
+
+          if (age < 18) {
+            alert("Debes ser mayor de edad para continuar.");
+            return;
+          }
+
+          document.getElementById("userInfo").innerHTML = `
+                <strong>Nombre:</strong> ${name}<br>
+                <strong>Edad:</strong> ${age} años
+            `;
+          document.getElementById("userInfo").classList.remove("hidden");
+          document.getElementById("contactForm").classList.add("hidden");
+          document.getElementById("experienceForm").classList.remove("hidden");
+        });
+
+      document
+        .getElementById("jobForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          let startDate = document.getElementById("startDate").value;
+          let endDate = document.getElementById("endDate").value;
+          let position = document.getElementById("position").value;
+
+          let li = document.createElement("li");
+          li.innerHTML = `
+                ${position} (${startDate} - ${endDate}) 
+                <button onclick="this.parentNode.remove()">Eliminar</button>
+            `;
+          document.getElementById("jobList").appendChild(li);
+
+          document.getElementById("jobForm").reset();
+        });
+    </script>
+  </body>
+</html>

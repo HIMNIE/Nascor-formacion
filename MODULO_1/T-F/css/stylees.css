@@ -1,3 +1,5 @@
+
+
 /* Reset básico */
 body, div {
     margin: 0;
@@ -12,7 +14,7 @@ body {
     height: 100vh;
     background-color: #f6f7f8;
 }
-.galeria{
+.galerias{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -25,7 +27,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 /* flex */
-.galeria img {
+.galerias img {
+  
     margin: 1rem;
    transition: transform 0.3s ease;
     width: 30%;
@@ -36,8 +39,9 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 }
 
-.galeria img:hover {
-    transform: scale(1.05);
+.galerias img:hover {
+    transform: translateX(20px);
+   
 
 }
 
@@ -59,3 +63,7 @@ body {
   
 }
 }
+
+
+
+

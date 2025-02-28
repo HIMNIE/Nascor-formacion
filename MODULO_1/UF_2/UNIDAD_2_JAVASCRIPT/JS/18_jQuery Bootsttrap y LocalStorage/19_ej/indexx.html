@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+
+        <input type="text" name="" id="nombreUsuario" required >
+        <label for="nombreUsuario">nombre : </label>
+        <input type="date" name="fechanac" id="fechaNacimiento" required >
+        <label for="fechaNac"> fecha Nacimiento :</label>
+        <select name="estudios" id="estudios">
+            <option value="Html"> Html</option>
+            <option value="Css"> Css</option>
+            <option value="Js"> Js</option>
+
+        </select>
+        <button type="submit"> Enviar </button>
+
+    </form>
+
+    <div>
+
+    </div>
+
+    <script>
+
+        const nombreUsuario = document.querySelector('#nombreUsuario')
+        const fechaNac = document.querySelector('#fechaNacimiento')
+        const estudios = document.querySelector('#estudios')
+        const form = document.querySelector('#form')
+
+        form.onsubmit=function(e){
+            e.preventDefault()
+
+            let nombreUsuario=nombreUsuario.value
+            let fechaNac=fechaNac.value
+            let estudios=estudios.value
+          
+        }
+
+
+
+
+    </script>
+</body>
+</html>
