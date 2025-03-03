@@ -4,89 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Semántico HTML</title>
+    <title>Contacto</title>
  <link rel="stylesheet" href="css/style.css">
+ <style>
+    #divcontenedor {
+        display: none;
+    }
+</style>
 </head>
 
 <body>
+
     <header>
-        <h1>Mi Sitio Web</h1>
+        <h1>Mi sitio web</h1>
     </header>
+
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="galeria.html">Galeria</a>
+
+        <a href="index.html">inicio</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
     </nav>
+
     <main>
-        <form id="form">
-            <label for="nombreUsuario">nombre : </label>
-            <input type="text" name="nombreUsuario" id="nombreUsuario" required >
-            <label for="fechaNacimiento"> fecha Nacimiento :</label>
-            <input type="date" name="fechaNacimiento" id="fechaNacimiento" required >
-           
-            <select name="estudios" id="estudios">
-                <option value="Html"> Html</option>
-                <option value="Css"> Css</option>
-                <option value="Js"> Js</option>
+        <article>
+            <h2 class="articleMain">
+                Rellenar el formulario
+            </h2>
+            <div>
+                <form id="form">
+                    <label for="nombreUsuario">Nombre Usuario: </label>
+                    <input id="nombreUsuario" type="text">
+                    <br>
     
-            </select>
-            <button type="submit"> Enviar </button>
+                    <label for="fechaNacimiento">Fecha de nacimiento: </label>
+                    <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+                    <br>
     
-        </form>
+                    <label for="estudios">Estudios: </label>
+                    <select name="estudios" id="estudios">
+                        <option value="bachillerato">Bachillerato</option>
+                        <option value="grado">Grado</option>
+                        <option value="grado">Grado-superior</option>
+                        <option value="basica">Básica</option>
+                    </select>
+                    <br>
     
-        <div>
-    <form style="display: none;" id="form2">
+                    <input type="submit" value="Enviar">
+                    <br>
+                </form>
+            </div>
         
-        <label  for="fechaInicio">fecha Inicio : </label>
-        <input type="date" name="fechaInicio" id="fechaInicio" required >
-        <label for="fechaFin">fecha final : </label>
-        <input type="date" name="fechaFin" id="fechaFin" required >
+            <div id="divcontenedor">
+                <h1> Lista Tareas!!</h1><br><br>
+                <div id="divform">
+                    <input id="inputTarea" type="text" placeholder="Tarea a realizar">
+                    <button id="añadirTareaBtn" class="boton">
+                        Añadir</button>
 
-
-        <label for="empleo"> Empleo :</label>
-        <input type="text" name="empleo" id="empleo" required >
+                </div>
+                <ul id="listaTareas">
+                </ul>
+            </div>
        
-     
-        <button type="submit"> Enviar </button>
-    </form>
-        </div>
-    
-    
+        </article>
+        <aside id="barraLateral">
+            <h2>Información Adicional</h2>
+            Este es un espacio para contenido adicional, como enlaces útiles,
+            información de contacto, o cualquier otra cosa que complementa el articulo principal.
+        </aside>
     </main>
+
     <footer>
-       
-       <h4><span id="copyright">&copy;</span> 2024 - Pie de página</h4>
+        <div id="footer">
+            &copy; 2024 Mi Sitio Web. Todos los derechos resservados.
+        </div>
     </footer>
-    <script>
-    
+
+    <script src="js/main.js">
    
-    let nombreUsuario = document.querySelector('#nombreUsuario')
-        let fechaNac = document.querySelector('#fechaNacimiento')
-        let estudios = document.querySelector('#estudios')
-        let form = document.querySelector('#form')
-
-
-        form.onsubmit=function(e){
-            e.preventDefault()
-            
-
-
-
-     
-
-
-             nombreUsuario= nombreUsuario.value
-             fechaNac= fechaNac.value
-             estudios= estudios.value
-
-
-             document.querySelector('#form2').style.display="block"
-          
-        }
-
-
-
-
     </script>
 </body>
 

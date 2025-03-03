@@ -1,152 +1,160 @@
+/* Estilos generales del cuerpo */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
 }
 
+/* Estilos del encabezado */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+    background: linear-gradient(to right, rgb(255, 252, 252) 0%, rgb(46, 45, 42) 100%);
+    color: rgb(249, 246, 246); 
+    text-shadow: 2px 2px 4px #0f0d0d;
+    padding: 1rem; 
+    text-align: center; 
 }
 
+/* Estilos de la barra de navegación */
 nav {
-    background-color: #333;
-    overflow: hidden;
+   display: flex; 
+   justify-content: space-around; 
+   justify-items: center; 
+   background: linear-gradient(to left, rgb(241, 169, 169) 0%, rgb(109, 107, 107) 100%);
+   overflow: hidden; 
 }
 
+/* Estilos de los enlaces dentro del menú de navegación */
 nav a {
-    float: left;
+    float: left; 
     display: block;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    text-align: center; 
+    padding: 14px 16px; 
+    text-decoration: none; 
 }
 
+/* Cambio de estilo cuando el mouse pasa sobre los enlaces */
 nav a:hover {
-    background-color: #ddd;
-    color: black;
+    border-radius: 5px; 
+    
+    background-color: #c46f6f; 
+    color: rgb(8, 8, 8); 
 }
 
+/* Estilos generales del contenido principal */
 main {
-    display: flex;
-    flex: 1;
-    flex-wrap: wrap;
-    padding: 1rem;
+    background: linear-gradient(to right, rgb(255, 252, 252) 0%, rgb(255, 0, 0) 175%);
+    display: flex; 
+    flex: 1; 
+    flex-wrap: wrap; 
+    padding: 1rem; 
 }
 
+/* Estilos del artículo principal */
 article {
-    flex: 3;
-    padding: 1rem;
+    flex: 3; 
+    padding: 1rem; 
 }
 
+/* Estilos de la barra lateral */
 aside {
-    flex: 1;
+    flex: 1; 
     padding: 1rem;
-    background-color: #f4f4f4;
-
+    background: linear-gradient(to right, rgb(255, 252, 252) 0%, rgb(133, 113, 113) 175%);
 }
 
+/* Estilos del pie de página */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+    background: linear-gradient(to right, rgb(255, 252, 252) 0%, rgb(46, 45, 42) 100%); 
+    color: white; 
+    text-align: center; 
+    padding: 1rem; 
 }
+
+/* Estilos para el texto dentro del footer */
 footer > span {
-    font-size: small;
+    font-size: small; 
 }
-nav > button{
-    color:#4CAF50
+
+/* Estilo de los botones dentro de la navegación */
+nav > button {
+    color: #4CAF50; 
 }
-/*   span{
-    font-size: small;
+
+/* Clase para los artículos principales */
+.articleMain {
+    text-align: center;
+    color: green; 
 }
-#copyright{
-    font-size: small;
-}*/
-.articleMain{
-    color:green
-}
-@media (max-width: 768px) {
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) { /* Se aplican los cambios si la pantalla es menor a 768px */
     nav a {
-        float: none;
-        width: 100%;
+        float: none; /* Elimina la alineación flotante */
+        width: 100%; /* Hace que los enlaces ocupen toda la línea */
     }
 
-    main {
-        flex-direction: column;
+    main, nav, .galeria{
+        flex-direction: column; /* Apila los elementos en columna */
+        
+       
+        
     }
+   
+   
 
     article,
     aside {
-        flex: 1;
-        margin: 0.5rem 0;
+        flex: 1; /* Ambos ocupan el mismo espacio */
+        margin: 0.5rem 0; /* Agrega margen vertical */
     }
 }
 
+/* -------- Galería de imágenes -------- */
 
-
-
-
-
-/*galeria*/
-
-
-
-
-/* Reset básico */
-
-.galeria{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Contenedor de la galería */
+.galeria {
+    margin-left: 40px;
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    width: 90%; 
+    max-width: 1200px; 
+    padding: 10px; 
+    background-color: #fafafa;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
-/* flex */
+
+/* Estilos de las imágenes dentro de la galería */
 .galeria img {
     margin: 1rem;
-   transition: transform 0.3s ease;
-    width: 30%;
-    max-width: 500px;
-    padding: 1px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+    width: 30%; 
+    min-width: 280px; 
+    padding: 1px; 
+    background-color: #e18484; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
 }
 
+/* Efecto de rotación al pasar el mouse sobre la imagen */
 .galeria img:hover {
-    transform: scale(1.05);
-
+    transform: rotate(0.05turn); /* Gira ligeramente la imagen */
 }
 
-
-
-
-
-
-/* Ajustes responsivos */
-@media (max-width: 1024px) {
+/* Ajustes responsivos para la galería en pantallas medianas */
+@media (max-width: 1024px) { /* Se aplican los cambios si la pantalla es menor a 1024px */
     .galeria {
-        width: 40%;
-      
+        width: 58%; /* Reduce el ancho del contenedor de la galería */
+        margin-left: 100px;
     }
-    @media (max-width: 768px) {
-        .galeria {
-           flex-direction: column;
-        }
-  
 }
-}
+
+
+

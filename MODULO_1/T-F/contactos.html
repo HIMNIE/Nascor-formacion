@@ -1,127 +1,214 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Contacto</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="RoMa-88">
+    <meta name="description" content="Layout">
+    <link rel="icon" type="image/png" href="images/faviconAdn.png">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
-      body {
-      
-        display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-        font-family: Arial, sans-serif;
-   
-        background: linear-gradient(to right, tan 0%, rgb(235, 178, 178) 100%);
-      }
-      #sidebar {
-        
-
-        display:flex;
-    justify-content: center;
-    align-items: center;
-        width: 50%;
-        padding: 30px;
-        border-right: 2px solid #141313;
-      }
-      #main {
-
-       
-        flex-grow: 1;
-        padding: 20px;
-      }
-      .hidden {
-        display: none;
-      }
+        #divcontenedor {
+            display: none;
+        }
     </style>
-  </head>
-  <body>
-  
-    <div id="sidebar">
-      <h3>Datos del Usuario</h3>
-      <p id="userInfo" class="hidden"></p>
-    </div>
+</head>
 
-    <div id="main">
-      <form id="contactForm">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" required />
-        <br />
-        <label for="birthdate">Fecha de Nacimiento:</label>
-        <input type="date" id="birthdate" required />
-        <br />
-        <button type="submit">Enviar</button>
-      </form>
+<body>
 
-      <div id="experienceForm" class="hidden">
-        <h3>Experiencia Laboral</h3>
-        <form id="jobForm">
-          <label for="startDate">Fecha Inicio:</label>
-          <input type="date" id="startDate" required />
-          <br />
-          <label for="endDate">Fecha Final:</label>
-          <input type="date" id="endDate" required />
-          <br />
-          <label for="position">Puesto:</label>
-          <input type="text" id="position" required />
-          <br />
-          <button type="submit">Añadir</button>
-        </form>
-        <ul id="jobList"></ul>
-      </div>
-    </div>
+    <header>
+        <h1>Mi sitio web</h1>
+    </header>
+
+    <nav>
+
+        <a href="index.html">inicio</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <main>
+        <article>
+            <h2 class="articleMain">
+                Rellena el Formulario
+            </h2>
+            <div>
+                <form id="form">
+                    <label for="nombreUsuario">Nombre Usuario: </label>
+                    <input id="nombreUsuario" type="text">
+                    <br>
+
+                    <label for="fechaNacimiento">Fecha de nacimiento: </label>
+                    <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+                    <br>
+
+                    <label for="estudios">Estudios: </label>
+                    <select name="estudios" id="estudios">
+                        <option value="bachillerato">Bachillerato</option>
+                        <option value="grado">Grado</option>
+                        <option value="basica">Básica</option>
+                    </select>
+                    <br>
+
+                    <input type="submit" value="Enviar">
+                    <br>
+                </form>
+            </div>
+
+
+
+            <div id="divcontenedor">
+                <h1> Lista Tareas!!</h1><br><br>
+                <div id="divform">
+                    <input id="inputTarea" type="text" placeholder="Tarea a realizar">
+                    <button id="añadirTareaBtn" class="boton">
+                        Añadir</button>
+
+                </div>
+                <ul id="listaTareas">
+                </ul>
+            </div>
+
+        </article>
+        <aside id="barraLateral">
+            <h2>Información Adicional</h2>
+            Este es un espacio para contenido adicional, como enlaces útiles,
+            información de contacto, o cualquier otra cosa que complementa el articulo principal.
+        </aside>
+    </main>
+
+    <footer>
+        <div id="footer">
+            &copy; 2024 Mi Sitio Web. Todos los derechos resservados.
+        </div>
+    </footer>
 
     <script>
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          let name = document.getElementById("name").value;
-          let birthdate = new Date(document.getElementById("birthdate").value);
-          let today = new Date();
-          let age = today.getFullYear() - birthdate.getFullYear();
-          let monthDiff = today.getMonth() - birthdate.getMonth();
+        // funcion para calcular la edad del usuario
+        function calcularEdad(inputFecha) {
 
-          // Ajustar si aún no ha cumplido años este año
-          if (
-            monthDiff < 0 ||
-            (monthDiff === 0 && today.getDate() < birthdate.getDate())
-          ) {
-            age--;
-          }
+            // validamos que el usuario haya ingresado algo
+            if (!inputFecha) {
+                document.write("<p>por favor, introduce una fecha valida.</p>");
+                return;
+            }
 
-          if (age < 18) {
-            alert("Debes ser mayor de edad para continuar.");
-            return;
-          }
 
-          document.getElementById("userInfo").innerHTML = `
-                <strong>Nombre:</strong> ${name}<br>
-                <strong>Edad:</strong> ${age} años
-            `;
-          document.getElementById("userInfo").classList.remove("hidden");
-          document.getElementById("contactForm").classList.add("hidden");
-          document.getElementById("experienceForm").classList.remove("hidden");
-        });
+            // creamos un objeto date con la fecha de nacimiento
+            const fechaNacimiento = new Date(inputFecha);
 
-      document
-        .getElementById("jobForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          let startDate = document.getElementById("startDate").value;
-          let endDate = document.getElementById("endDate").value;
-          let position = document.getElementById("position").value;
+            // obtenemos la fecha actual del sistema
+            const fechaActual = new Date();
 
-          let li = document.createElement("li");
-          li.innerHTML = `
-                ${position} (${startDate} - ${endDate}) 
-                <button onclick="this.parentNode.remove()">Eliminar</button>
-            `;
-          document.getElementById("jobList").appendChild(li);
+            // aseguramos que la fecha de nacimiento no sea futura
+            if (fechaNacimiento > fechaActual) {
+                alert("<p>no puedes ser del futuro, amigo!</p>");
+                return;
+            }
 
-          document.getElementById("jobForm").reset();
-        });
+            // calculamos la diferencia de años entre las fechas
+            let edad = fechaActual.getFullYear() - fechaNacimiento.getFullYear();
+
+            // ajustamos la edad si todavia no ha sido tu cumpleaños este año
+            const mesNacimiento = fechaNacimiento.getMonth();
+            const diaNacimiento = fechaNacimiento.getDate();
+            const mesActual = fechaActual.getMonth();
+            const diaActual = fechaActual.getDate();
+
+            if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+                edad--; // restamos un año porque todavia no cumples años
+            }
+            return edad;
+
+        }
+
+        const formulario = document.querySelector("#form");
+
+        const aside = document.querySelector("#barraLateral");
+
+        formulario.onsubmit = function (e) {
+            e.preventDefault()
+            let nombreUsuario = document.querySelector("#nombreUsuario").value;
+            let fechaNacimiento = document.querySelector("#fechaNacimiento").value;
+            let estudios = document.querySelector("#estudios").value;
+            // creamos un objeto date con la fecha de nacimiento
+            const fechaNacimientoUsuario = new Date(fechaNacimiento);
+
+            // obtenemos la fecha actual del sistema
+            const fechaActual = new Date();
+
+            // aseguramos que la fecha de nacimiento no sea futura
+            if (fechaNacimientoUsuario > fechaActual) {
+                alert("<p>no puedes ser del futuro, amigo!</p>");
+                return;
+            }
+
+            // calculamos la diferencia de años entre las fechas
+            let edad = fechaActual.getFullYear() - fechaNacimientoUsuario.getFullYear();
+
+            // ajustamos la edad si todavia no ha sido tu cumpleaños este año
+            const mesNacimiento = fechaNacimientoUsuario.getMonth();
+            const diaNacimiento = fechaNacimientoUsuario.getDate();
+            const mesActual = fechaActual.getMonth();
+            const diaActual = fechaActual.getDate();
+
+            if (mesActual < mesNacimiento || (mesActual === mesNacimiento && diaActual < diaNacimiento)) {
+                edad--; // restamos un año porque todavia no cumples años
+            } if (edad < 18) {
+                alert('debes ser mayor de edad');
+            }
+            else {
+                aside.innerHTML = `
+                <h2>
+                    Datos de registro:
+ 
+                </h2>
+                Nombre: ${nombreUsuario}<br>
+                Fecha de Nacimiento: ${fechaNacimiento}<br>
+                Estudios: ${estudios}<br>
+                Edad: ${edad}<br>
+ 
+ 
+                               `
+            }
+
+            //desaparece primer form
+            formulario.style.display = "none";
+            //mostramos contenedor de tareas
+            document.getElementById("divcontenedor").style.display = "block";
+        }
+
+
+        //obtenemos los objetos creados en html con el dom
+        let inputTarea = document.getElementById('inputTarea');
+        const anadirTareaBtn = document.querySelector('#añadirTareaBtn');
+        let lista = document.querySelector('#listaTareas');
+
+        console.log(inputTarea.value);
+        console.log(lista.value);
+
+
+        function anadirTareas() {
+            let tarea = inputTarea.value;
+
+            console.log(tarea);
+            if (!tarea || tarea == '') { return; }
+            let elemenLista = `
+    <li>${tarea}
+    <button class="borrarBtn" onclick=" this.parentNode.remove()">
+        <span>&times;</span>
+    </button>
+    </li>`;
+            lista.innerHTML += elemenLista;
+            inputTarea.value = '';
+
+        }
+        anadirTareaBtn.onclick = anadirTareas;
+
+
     </script>
-  </body>
+</body>
+
 </html>
