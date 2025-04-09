@@ -1,0 +1,330 @@
+
+/*--------------------------------------inicio------------------------------------*/
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+/* Estilos del encabezado */
+header {
+    background: linear-gradient(to right, rgb(255, 252, 252) 0%, rgb(21, 214, 37) 100%);
+    color: rgb(249, 246, 246); 
+    text-shadow: 2px 2px 4px #0f0d0d;
+    padding: 1rem; 
+    text-align: center; 
+}
+
+/* Estilos de la barra de navegación */
+nav {
+   display: flex; 
+   justify-content: space-around; 
+   justify-items: center; 
+   background: linear-gradient(to left, rgb(238, 225, 225) 0%, rgb(12, 11, 11) 100%);
+   overflow: hidden; 
+}
+
+/* Estilos de los enlaces dentro del menú de navegación */
+nav a {
+    float: left; 
+    display: block;
+    color: white;
+    text-align: center; 
+    padding: 14px 16px; 
+    text-decoration: none; 
+}
+
+/* Cambio de estilo cuando el mouse pasa sobre los enlaces */
+nav a:hover {
+    border-radius: 5px; 
+    
+    background-color: #c46f6f; 
+    color: rgb(8, 8, 8); 
+}
+
+/* Estilos generales del contenido principal */
+main {
+    background: linear-gradient(to right, rgb(255, 252, 252) 0%, rgb(163, 156, 156) 175%);
+    display: flex; 
+    flex: 1; 
+    flex-wrap: wrap; 
+    padding: 1rem; 
+}
+
+/* Estilos del artículo principal */
+article {
+    flex: 3; 
+    padding: 1rem; 
+}
+
+/* Estilos de la barra lateral */
+aside {
+    flex: 1; 
+    padding: 1rem;
+    background: linear-gradient(to right, rgb(255, 252, 252) 0%, rgb(133, 113, 113) 175%);
+}
+
+/* Estilos del pie de página */
+footer {
+    background: linear-gradient(to left, rgb(238, 225, 225) 0%, rgb(12, 11, 11) 100%);
+    color: white; 
+    text-align: center; 
+    padding: 1rem; 
+}
+
+/* Estilos para el texto dentro del footer */
+footer > span {
+    font-size: small; 
+}
+
+/* Estilo de los botones dentro de la navegación */
+nav > button {
+    color: #4CAF50; 
+}
+
+/* Clase para los artículos principales */
+.articleMain {
+    text-align: center;
+    color: green; 
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) { /* Se aplican los cambios si la pantalla es menor a 768px */
+    nav a {
+        float: none; /* Elimina la alineación flotante */
+        width: 100%; /* Hace que los enlaces ocupen toda la línea */
+    }
+
+    main, nav, .galeria{
+        flex-direction: column; /* Apila los elementos en columna */
+        
+       
+        
+    }
+   
+   
+
+    article,
+    aside {
+        flex: 1; /* Ambos ocupan el mismo espacio */
+        margin: 0.5rem 0; /* Agrega margen vertical */
+    }
+}
+
+/*-----------------------  Galería de imágenes ----------------------------------------------- */
+
+/* Contenedor de la galería */
+.galeria {
+    margin-left: 40px;
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    width: 90%; 
+    max-width: 1200px; 
+    padding: 10px; 
+    background-color: #fafafa;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Estilos de las imágenes dentro de la galería */
+.galeria img {
+    margin: 1rem;
+    transition: transform 0.3s ease;
+    width: 30%; 
+    min-width: 280px; 
+    padding: 1px; 
+    background-color: #e18484; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+}
+
+/* Efecto de rotación al pasar el mouse sobre la imagen */
+.galeria img:hover {
+    transform: rotate(0.05turn); /* Gira ligeramente la imagen */
+}
+
+/* Ajustes responsivos para la galería en pantallas medianas */
+@media (max-width: 1024px) { /* Se aplican los cambios si la pantalla es menor a 1024px */
+    .galeria {
+        width: 58%; /* Reduce el ancho del contenedor de la galería */
+        margin-left: 100px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------contacto--------------------*/
+/* .formulario: Define un contenedor principal con un ancho del 80% y centrado en la página. */
+.formulario {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+   
+    border-radius: 10px;
+   
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #070707;
+    
+  
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* #button: Estilo del botón principal */
+#button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Efecto hover para el botón */
+#button:hover{
+    background-color: #458ea0;
+}
+
+/* #nombreUsuario: Estilo para el campo de entrada de texto del nombre */
+#nombreUsuario{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+   
+}
+
+/* #fechaNacimiento: Estilo para el campo de fecha de nacimiento */
+#fechaNacimiento{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    
+}
+/* Estilo para el campo de estudios */
+#estudios{
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+  
+}
+
+/*  Estilo para la lista de tareas */
+  #listaTareas{
+background-color: #f4f8f4;
+box-shadow: #070707;
+   
+
+    padding: 4px;
+    border: none;
+    
+    border-radius: 5px;
+    
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+/*  Contenedor del formulario de tareas */
+
+  #divform {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/*  Estilo para el campo de entrada de tarea */
+#inputTarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el botón de acción */
+.boton {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* Efecto hover para el botón */
+.boton:hover {
+    background-color: #45a049;
+}
+
+
+/* Estilo para el botón principal */
+.borrarBtn {
+    background-color: #ffffff;
+    border: solid 1px #070707;;
+    padding: 10px 15px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  /*Estilo cuando el ratón pasa sobre el botón (hover)*/
+  .borrarBtn:hover {
+    background-color: #ff1a1a;
+  }
+/* Estilo para el texto dentro del botón */
+  .borrarBtn span {
+    color: white;
+    font-size: x-large;
+  }
+

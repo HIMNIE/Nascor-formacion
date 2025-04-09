@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+ <link rel="stylesheet" href="css/style.css">
+ <style>
+    #container {
+        display: none;
+    }
+    #formulario{
+        display: block;
+    }
+</style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Mi sitio web</h1>
+    </header>
+
+    <nav>
+
+        <a href="index.html">inicio</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <main>
+        <article>
+            <h2 class="articleMain">
+                Rellenar el formulario
+            </h2>
+            <div class="formulario">
+                <form id="form">
+                    <label for="nombreUsuario">Nombre Usuario: </label>
+                    <input id="nombreUsuario" type="text">
+                    <br>
+    
+                    <label for="fechaNacimiento">Fecha de nacimiento: </label>
+                    <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+                    <br>
+    
+                    <label for="estudios">Estudios: </label>
+                    <select name="estudios" id="estudios">
+                        <option value="bachillerato">Bachillerato</option>
+                        <option value="grado">Grado-medio</option>
+                        <option value="grado">Grado-superior</option>
+                        
+                    </select>
+                    <br>
+    
+                    <input id="button" type="submit" value="Enviar">
+                    <br>
+                </form>
+            </div>
+        
+            <div id="container">
+                <h1 style="text-align: center;"> Lista Tareas</h1><br>
+                <div id="divform">
+                    <input id="inputTarea" type="text" placeholder="Tarea a realizar">
+                    <input  class="boton" id="añadirTareaBtn" type="submit" value="Añadir">
+                   
+
+                </div>
+                <ul id="listaTareas">
+                </ul>
+            </div>
+       
+        </article>
+        <aside id="barraLateral">
+            <h2>Información Adicional</h2>
+            Este es un espacio para contenido adicional, como enlaces útiles,
+            información de contacto, o cualquier otra cosa que complementa el articulo principal.
+        </aside>
+    </main>
+
+    <footer>
+        <div id="footer">
+            &copy; 2024 Mi Sitio Web. Todos los derechos resservados.
+        </div>
+    </footer>
+
+    <script src="js/main.js">
+   
+    </script>
+</body>
+
+</html>
